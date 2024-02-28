@@ -6,6 +6,8 @@ import Down from "@/components/logos/Down";
 import Up from "@/components/logos/Up";
 import SpanBlue from "@/components/logos/SpanBlue";
 import SpanGreen from "@/components/logos/SpanGreen";
+import House from "@/components/logos/House";
+import LogIn from "./LogIn";
 
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
@@ -29,7 +31,7 @@ export default function Home() {
     ],
   };
   return (
-    <div className="bg-slate-100  m-auto w-full h-[1200px]">
+    <div className="bg-slate-100 w-full h-[1200px]">
       <div className=" m-auto flex justify-between max-w-[1200px]">
         <div className="mt-[60px] w-[1200px] m-auto flex gap-[25px]">
           <div className="w-[385.1px] h-[219.9px] bg-blue-600 rounded-2xl">
@@ -85,17 +87,30 @@ export default function Home() {
             <p>Income - Expense</p>
           </div>
         </div>
-        <div className="w-[588px] h-[284px] bg-white rounded-2xl">
+        <div className="w-[588px] h-[284px] bg-white rounded-2xl ">
           <div className="border-b h-[56px] flex items-center px-6 justify-between">
             <p>Income - Expense</p>
             <p>Jun 1 - Nov 30</p>
           </div>
-          <div className="w-[200px] h-[200px] px-6">
-            <Doughnut
-              data={data}
-              options={{ plugins: { legend: { display: false } } }}
-            />
+          <div className="h-[228px] flex items-center px-6">
+            <div className="w-[180px] h-[180px]">
+              <Doughnut
+                data={data}
+                options={{ plugins: { legend: { display: false } } }}
+              />
+            </div>
+            <div></div>
           </div>
+        </div>
+      </div>
+      <div className="m-auto max-w-[1200px] mt-[24px] h-[456px] bg-white rounded-xl">
+        <p className="w-[1200px] h-[56px] flex items-center p-6 border-b">
+          Last records
+        </p>
+        <div className="">
+          <House />
+          <p>Lending & Renting</p>
+          <p className="">3 hours ago</p>
         </div>
       </div>
     </div>
