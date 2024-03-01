@@ -1,6 +1,12 @@
+import Loading from "@/components/Loading";
+import Step1 from "@/components/Step1";
 import Vector from "@/components/logos/Vector";
 import { useRouter } from "next/router";
-export default function LogIn() {
+import { useState } from "react";
+import Step2 from "@/components/Step2";
+import Step3 from "@/components/Step3";
+
+export default function signup() {
   async function handleSubmit(e) {
     e.preventDefault();
     let newId = nanoid();
@@ -10,6 +16,7 @@ export default function LogIn() {
       id: newId,
     };
   }
+  const [show, setShow] = useState("signup");
   const router = useRouter();
   return (
     <div className="h-[700px] flex justify-center items-center">
@@ -60,7 +67,8 @@ export default function LogIn() {
           <button
             className="border w-[370px] h-[48px] rounded-2xl bg-blue-600 mt-[20px]"
             onClick={() => {
-              router.push("/Loading");
+              // router.push("/Loading");
+              setShow("loading");
             }}
           >
             Sign up
@@ -71,11 +79,19 @@ export default function LogIn() {
           <button
             className="text-blue-600"
             onClick={() => {
-              router.push("/LogIn");
+              router.push("/logIn");
             }}
           >
             Log in
           </button>
+        </div>
+      </div>
+      <div>
+        <div className={`${show == "loading" ? "block" : "hidden"}`}>
+          <Loading />
+        </div>
+        <div className={`${show == "loading" ? "block" : "hidden"}`}>
+          <Step1 />
         </div>
       </div>
     </div>

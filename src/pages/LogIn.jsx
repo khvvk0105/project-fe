@@ -1,6 +1,6 @@
 import Vector from "@/components/logos/Vector";
 import { useRouter } from "next/router";
-export default function LogIn() {
+export default function logIn() {
   async function handleSubmit(e) {
     e.preventDefault();
     let newId = nanoid();
@@ -46,9 +46,9 @@ export default function LogIn() {
         <div className="flex justify-center ">
           <button
             className="border w-[370px] h-[48px] rounded-2xl bg-blue-600 mt-[20px]"
-            onClick={() => {
-              router.push("/");
-            }}
+            // onClick={() => {
+            //   router.push("/");
+            // }}
           >
             Log in
           </button>

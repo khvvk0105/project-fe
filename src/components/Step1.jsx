@@ -1,6 +1,7 @@
 import Vector from "@/components/logos/Vector";
-
-export default function Register() {
+import { useRouter } from "next/router";
+export default function Step1() {
+  const router = useRouter();
   return (
     <div className="mt-[100px] flex flex-col justify-center items-center">
       <div className="flex items-center justify-center gap-4">
@@ -15,7 +16,7 @@ export default function Register() {
         </ul>
       </div>
       <div className="">
-        <div className="w-[50px] h-[50px] bg-black mt-[141px]">
+        <div className="w-[50px] h-[50px] bg-blue-700 mt-[141px]">
           <svg
             className="w-full h-full"
             xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +48,12 @@ export default function Register() {
           Your base currency should be the one you use most often. All
           transaction in other currencies will be calculated based on this one{" "}
         </p>
-        <button className="bg-blue-700 w-[384px] h-[48px] rounded-xl text-white mt-[32px]">
+        <button
+          className="bg-blue-700 w-[384px] h-[48px] rounded-xl text-white mt-[32px]"
+          onClick={() => {
+            router.push("/Step2");
+          }}
+        >
           Confirm
         </button>
       </div>
