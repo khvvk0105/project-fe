@@ -1,7 +1,6 @@
 import Vector from "@/components/logos/Vector";
 import { useRouter } from "next/router";
-export default function Step1() {
-  const router = useRouter();
+export default function Step1({ showLoader, setShowLoader }) {
   return (
     <div className="mt-[100px] flex flex-col justify-center items-center">
       <div className="flex items-center justify-center gap-4">
@@ -51,7 +50,7 @@ export default function Step1() {
         <button
           className="bg-blue-700 w-[384px] h-[48px] rounded-xl text-white mt-[32px]"
           onClick={() => {
-            router.push("/Step2");
+            setShowLoader("step2");
           }}
         >
           Confirm

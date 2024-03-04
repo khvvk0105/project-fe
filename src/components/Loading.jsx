@@ -1,7 +1,7 @@
 import Vector from "@/components/logos/Vector";
 import { useRouter } from "next/router";
 
-export default function Loading() {
+export default function Loading({ showLoader, setShowLoader }) {
   const router = useRouter();
   return (
     <div className="h-[1000px] flex flex-col justify-center items-center">
@@ -15,7 +15,7 @@ export default function Loading() {
         <button
           className="bg-blue-700 w-[384px] h-[48px] rounded-xl text-white mt-[32px]"
           onClick={() => {
-            router.push("/Step1");
+            setShowLoader("step1");
           }}
         >
           Confirm

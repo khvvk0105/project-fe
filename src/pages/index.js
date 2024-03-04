@@ -6,7 +6,7 @@ import Down from "@/components/logos/Down";
 import Up from "@/components/logos/Up";
 import SpanBlue from "@/components/logos/SpanBlue";
 import SpanGreen from "@/components/logos/SpanGreen";
-import LogIn from "./LogIn";
+import LogIn from "./logIn";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import Barchard from "@/components/Barchart";

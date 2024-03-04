@@ -1,4 +1,22 @@
-export default function SignUp() {
+import Loading from "@/components/Loading";
+import Step1 from "@/components/Step1";
+import Vector from "@/components/logos/Vector";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import Step2 from "@/components/Step2";
+import Step3 from "@/components/Step3";
+
+export default function SignUp({ showLoader, setShowLoader }) {
+  // async function handleSubmit(e) {
+  //   e.preventDefault();
+  //   let newId = nanoid();
+  //   const data = {
+  //     name: e.target.username.value,
+  //     age: Number(e.target.age.value),
+  //     id: newId,
+  //   };
+  // }
+  // const router = useRouter();
   return (
     <div className="w-[384px] h-[426px]">
       <div className="flex justify-center items-center mt-[10px] gap-2">
@@ -11,8 +29,9 @@ export default function SignUp() {
           Welcome Back, Please enter your details
         </p>
       </div>
+
       <div className="flex flex-col justify-center items-center mt-[40px]">
-        <form onSubmit={handleSubmit}>
+        <form>
           <label htmlFor="Name"></label>
           <input
             type="text"
@@ -43,12 +62,13 @@ export default function SignUp() {
           <input type="text" name="Log in" id="Log in" />
         </form>
       </div>
+
       <div className="flex justify-center ">
         <button
           className="border w-[370px] h-[48px] rounded-2xl bg-blue-600 mt-[20px]"
           onClick={() => {
             // router.push("/Loading");
-            setShow("loading");
+            setShowLoader("loading");
           }}
         >
           Sign up
@@ -59,7 +79,7 @@ export default function SignUp() {
         <button
           className="text-blue-600"
           onClick={() => {
-            router.push("/logIn");
+            // router.push("/logIn");
           }}
         >
           Log in

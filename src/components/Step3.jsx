@@ -1,6 +1,6 @@
 import Vector from "@/components/logos/Vector";
 import { useRouter } from "next/router";
-export default function Step3() {
+export default function Step3({ showLoader, setShowLoader }) {
   const router = useRouter();
   return (
     <div className="mt-[100px] flex flex-col justify-center items-center">

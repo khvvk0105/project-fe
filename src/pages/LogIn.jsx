@@ -46,9 +46,9 @@ export default function logIn() {
         <div className="flex justify-center ">
           <button
             className="border w-[370px] h-[48px] rounded-2xl bg-blue-600 mt-[20px]"
-            // onClick={() => {
-            //   router.push("/");
-            // }}
+            onClick={() => {
+              router.push("/");
+            }}
           >
             Log in
           </button>
