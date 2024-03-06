@@ -58,7 +58,7 @@ export default function logIn() {
           <button
             className="text-blue-600"
             onClick={() => {
-              router.push("/Signup");
+              router.push("/signup");
             }}
           >
             Sign up

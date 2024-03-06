@@ -49,7 +49,7 @@ export default function Step2({ showLoader, setShowLoader }) {
         <button
           className="bg-blue-700 w-[384px] h-[48px] rounded-xl text-white mt-[32px]"
           onClick={() => {
-            setShowLoader("/step3");
+            setShowLoader("step3");
           }}
         >
           Confirm
