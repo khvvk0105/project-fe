@@ -47,7 +47,7 @@ export default function logIn() {
           <button
             className="border w-[370px] h-[48px] rounded-2xl bg-blue-600 mt-[20px]"
             onClick={() => {
-              router.push("/");
+              router.push("/dashboard");
             }}
           >
             Log in

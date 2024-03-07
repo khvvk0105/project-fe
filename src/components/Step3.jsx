@@ -42,7 +42,7 @@ export default function Step3({ showLoader, setShowLoader }) {
         <button
           className="bg-blue-700 w-[384px] h-[48px] rounded-xl text-white mt-[32px]"
           onClick={() => {
-            router.push("/");
+            router.push("/dashboard");
           }}
         >
           Go to Dashboard
