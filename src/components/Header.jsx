@@ -1,16 +1,23 @@
 import Vector from "./logos/Vector";
 import Plus from "./logos/Plus";
+import Record from "@/pages/record";
+import dashboard from "@/pages/dashboard";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Header() {
+  const router = useRouter();
   return (
     <div className="w-full bg-white">
       <div className="navbar bg-base-100 max-w-[1200px] h-[72px] m-auto ">
         <div className="flex-1 gap-6">
-          <a className="btn btn-ghost text-xl">
-            <Vector />
-          </a>
-          <button>Dashboard</button>
-          <button>Records</button>
+          <Vector />
+          <Link href="/dashboard">
+            <p class="btn btn-ghost text-base ">Dashboard</p>
+          </Link>
+          <Link href="/record">
+            <p class="btn btn-ghost text-base ">Records</p>
+          </Link>
         </div>
         <div className="flex-none gap-2">
           <div className="flex w-[99px] h-[32px] bg-blue-600 rounded-xl items-center justify-center">
