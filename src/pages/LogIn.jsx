@@ -1,15 +1,13 @@
 import Vector from "@/components/logos/Vector";
 import { useRouter } from "next/router";
 export default function logIn() {
-  async function handleSubmit(e) {
+  const handleLogin = async () => {
     e.preventDefault();
-    let newId = nanoid();
     const data = {
-      name: e.target.username.value,
-      age: Number(e.target.age.value),
-      id: newId,
+      username: e.target.name.value,
+      password: e.target.phone.value,
     };
-  }
+  };
   const router = useRouter();
   return (
     <div className="h-[700px] flex justify-center items-center">
