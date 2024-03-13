@@ -16,7 +16,7 @@ export default function SignUp({ showLoader, setShowLoader }) {
   //     id: newId,
   //   };
   // }
-  // const router = useRouter();
+  const router = useRouter();
   return (
     <div className="max-w-[1200px] m-auto">
       <div className="w-[384px] h-[426px] flex flex-col justify-center items-center">
@@ -80,7 +80,7 @@ export default function SignUp({ showLoader, setShowLoader }) {
           <button
             className="text-blue-600"
             onClick={() => {
-              // router.push("/logIn");
+              router.push("/logIn");
             }}
           >
             Log in

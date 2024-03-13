@@ -1,14 +1,42 @@
 import Vector from "@/components/logos/Vector";
 import { useRouter } from "next/router";
+import { useState } from "react";
 export default function logIn() {
+  const BE_URL = "http://localhost:4000/log-in";
+  const [userName, setUserName] = useState("");
+  const [userPassword, setPassword] = useState("");
+  const router = useRouter();
+
   const handleLogin = async () => {
     e.preventDefault();
     const data = {
       username: e.target.name.value,
       password: e.target.phone.value,
     };
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    };
+    const FETCHED_DATA = await fetch(BE_URL, options);
+    const FETCHED_JSON = await FETCHED_DATA.json();
+    console.log("fethc", FETCHED_JSON);
+
+    const userId = FETCHED_JSON.result.rows[0].id;
+
+    localStorage.setItem("userId", userId);
+
+    console.log("user ID", localStorage.getItem("userId"));
+
+    if (FETCHED_JSON.result.rowCount == 1) {
+      router.push("/");
+    } else {
+      alert("Email or password is incorrect");
+    }
   };
-  const router = useRouter();
+
   return (
     <div className="h-[700px] flex justify-center items-center">
       <div className="w-[384px] h-[426px]">
@@ -23,7 +51,7 @@ export default function logIn() {
           </p>
         </div>
         <div className="flex flex-col justify-center items-center mt-[40px]">
-          <form onSubmit={handleSubmit}>
+          <form>
             <label htmlFor="Email"></label>
             <input
               type="text"
@@ -44,9 +72,7 @@ export default function logIn() {
         <div className="flex justify-center ">
           <button
             className="border w-[370px] h-[48px] rounded-2xl bg-blue-600 mt-[20px]"
-            onClick={() => {
-              router.push("/dashboard");
-            }}
+            // handleLoginUser={handleLoginUser}
           >
             Log in
           </button>
